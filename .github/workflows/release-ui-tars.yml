@@ -30,6 +30,7 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: publish
+        continue-on-error: true # <--- Permet de continuer même si GitHub refuse la publication en ligne
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cd apps/ui-tars && pnpm run publish:win32
@@ -37,4 +38,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: UI-TARS-Windows-Exe
-          path: apps/ui-tars/out/*.exe
+          path: |
+            apps/ui-tars/out/**/*.exe
+            apps/ui-tars/out/make/**/*.exe
