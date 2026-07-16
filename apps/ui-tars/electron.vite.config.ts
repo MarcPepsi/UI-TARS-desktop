@@ -8,7 +8,6 @@ import react from '@vitejs/plugin-react';
 import {
   defineConfig,
   externalizeDepsPlugin,
-  bytecodePlugin,
 } from 'electron-vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
