@@ -1,4 +1,4 @@
-Name: Release UI-TARS app
+name: Release UI-TARS app
 on:
   workflow_dispatch:
 
